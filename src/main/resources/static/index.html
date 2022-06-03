@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bobux Generator Checkout</title>
+</head><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Accept a payment</title>
+    <meta name="description" content="Go Bankrupt" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="checkout.css" />
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="checkout.js" defer></script>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+
+        var stripePublicKey = /*[[${stripePublicKey}]]*/ null;
+
+        /*]]>*/
+    </script>
+
+</head>
+<body>
+<!-- Display a payment form -->
+<form id="payment-form">
+    <p style="color:white">Robux Checkout.</p>
+    <p style="color:white">You will recieve your Bobux 1-2 days after you pay.</p>
+    <p style="color: white">You will be billed 50$.</p>
+    <input type="text" id="email" placeholder="Enter email address" />
+    <div id="payment-element">
+        <!--Stripe.js injects the Payment Element-->
+    </div>
+    <button id="submit">
+        <div class="spinner hidden" id="spinner"></div>
+        <span id="button-text">Pay now</span>
+    </button>
+    <div id="payment-message" class="hidden"></div>
+</form>
+</body>
+</html>
