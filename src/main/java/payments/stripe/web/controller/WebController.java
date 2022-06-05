@@ -9,10 +9,5 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class WebController {
 
     @Value("${stripe.public.key}")
-    private String stripePublicKey;
+    private String stripePublicKey;}
 
-    @GetMapping("/")
-    public String home (Model model) {
-        model.addAttribute("stripePublicKey, stripePublicKey");
-        return "home";
-    }}
